@@ -1,0 +1,83 @@
+# openapi2-functions.yaml
+swagger: '2.0'
+info:
+  title: backend-alphavantage-search api-backend-alphavantage-search
+  description: API alphavantage-search for marketstare
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /actuator/health:
+    get:
+      summary: API health check
+      operationId: healthCheck
+      x-google-backend:
+        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM]
+      responses:
+        '200':
+          description: A successful response for health check
+          schema:
+            type: string
+  /api/v1/all/tickers:
+    get:
+      summary: Returns all tickers
+      operationId: allTickers
+      x-google-backend:
+        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM]
+      responses:
+        '200':
+          description: A successful response for /all/tickers
+          schema:
+            type: string
+  /api/v1/latestupdate/find/symbol/{symbol}:
+    get:
+      summary: Returns latest price of provided ticker
+      operationId: latestPrice
+      x-google-backend:
+        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      parameters:
+        - in: "path"
+          name: "symbol"
+          required: true
+          type: "string"
+      responses:
+        '200':
+          description: A successful response for /api/v1/latestupdate/find/symbol/{symbol}
+          schema:
+            type: string
+  /api/v1/overview/find/symbol/{symbol}:
+    get:
+      summary: Returns company's overview w.r.t provided ticker
+      operationId: overview
+      x-google-backend:
+        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      parameters:
+        - in: "path"
+          name: "symbol"
+          required: true
+          type: "string"
+      responses:
+        '200':
+          description: A successful response for /api/v1/overview/find/symbol/{symbol}
+          schema:
+            type: string
+securityDefinitions:
+  # This section configures basic authentication with an API key.
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
