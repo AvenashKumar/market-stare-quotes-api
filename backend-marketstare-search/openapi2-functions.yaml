@@ -14,7 +14,7 @@ paths:
       summary: API health check
       operationId: healthCheck
       x-google-backend:
-        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
       security:
         - api_key: [AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM]
@@ -28,7 +28,7 @@ paths:
       summary: Returns all tickers
       operationId: allTickers
       x-google-backend:
-        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
       security:
         - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM]
@@ -42,7 +42,7 @@ paths:
       summary: Returns latest price of provided ticker
       operationId: latestPrice
       x-google-backend:
-        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
       security:
         - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
@@ -61,7 +61,7 @@ paths:
       summary: Returns company's overview w.r.t provided ticker
       operationId: overview
       x-google-backend:
-        address: https://backend-alphavantage-search-co4tcjxfmq-uc.a.run.app
+        address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
       security:
         - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
