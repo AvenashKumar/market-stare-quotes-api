@@ -80,7 +80,7 @@ paths:
       summary: Returns reddit submission w.r.t provided query e.g. aapl|apple
       operationId: reddit-posts
       x-google-backend:
-        address: https://market-stare-reddit-api-co4tcjxfmq-uc.a.run.app
+        address: https://backend-marketstare-reddit-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
       security:
         - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
