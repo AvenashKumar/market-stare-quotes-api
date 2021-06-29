@@ -75,7 +75,7 @@ paths:
           description: A successful response for /api/v1/overview/find/symbol/{symbol}
           schema:
             type: string
-  /reddit/submissions/{query}:
+  /api/v1/reddit/submissions/{query}:
     get:
       summary: Returns reddit submission w.r.t provided query e.g. aapl|apple
       operationId: reddit-posts
