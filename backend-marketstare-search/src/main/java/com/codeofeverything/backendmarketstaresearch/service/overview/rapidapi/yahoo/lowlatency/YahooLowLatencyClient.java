@@ -27,8 +27,8 @@ public class YahooLowLatencyClient implements IClient {
   public <T> T execute(
       MultiValueMap<String, String> queryParams, Class<T> responseType, Object... uriVariables) {
     HttpHeaders httpHeaders = new HttpHeaders();
-    httpHeaders.set("x-rapidapi-key", yahooLowLatencyOptionsConfigs.getApiKey());
-    httpHeaders.set("x-rapidapi-host", yahooLowLatencyOptionsConfigs.getHost());
+    httpHeaders.set("x-api-key", yahooLowLatencyOptionsConfigs.getApiKey());
+    httpHeaders.set("x-api-host", yahooLowLatencyOptionsConfigs.getHost());
     return execute(
         restTemplate,
         yahooLowLatencyOptionsConfigs.getEndpoint(),
