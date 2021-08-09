@@ -9,7 +9,7 @@ schemes:
 produces:
   - application/json
 paths:
-  /actuator/health:
+  /backend-marketstare-search/actuator/health:
     get:
       summary: API health check
       operationId: healthCheck
@@ -23,7 +23,7 @@ paths:
           description: A successful response for health check
           schema:
             type: string
-  /api/v1/all/tickers:
+  /backend-marketstare-search/api/v1/all/tickers:
     get:
       summary: Returns all tickers
       operationId: allTickers
@@ -37,7 +37,7 @@ paths:
           description: A successful response for /all/tickers
           schema:
             type: string
-  /api/v1/latestupdate/find/symbol/{symbol}:
+  /backend-marketstare-search/api/v1/latestupdate/find/symbol/{symbol}:
     get:
       summary: Returns latest price of provided ticker
       operationId: latestPrice
@@ -56,7 +56,7 @@ paths:
           description: A successful response for /api/v1/latestupdate/find/symbol/{symbol}
           schema:
             type: string
-  /api/v1/overview/find/symbol/{symbol}:
+  /backend-marketstare-search/api/v1/overview/find/symbol/{symbol}:
     get:
       summary: Returns company's overview w.r.t provided ticker
       operationId: overview
