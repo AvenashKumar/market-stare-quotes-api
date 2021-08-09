@@ -8,9 +8,9 @@
 	us.gcr.io/marketstare/backend-alphavantage-search:<Version>
 	
 	e.g.
-	us.gcr.io/marketstare/backend-alphavantage-search:1.0.0
+	us.gcr.io/marketstare/backend-marketstare-search:1.0.0
 	
-2. docker push us.gcr.io/marketstare/backend-alphavantage-search:1.0.0 (credentials login gcloud, follow instruction on command line, if getting error)
+2. docker push us.gcr.io/marketstare/backend-marketstare-search:1.0.0 (credentials login gcloud, follow instruction on command line, if getting error)
 
 3. Create new service in CloudRun and use newly created image.
 
