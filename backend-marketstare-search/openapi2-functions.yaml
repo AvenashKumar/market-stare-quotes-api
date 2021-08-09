@@ -75,6 +75,20 @@ paths:
           description: A successful response for /api/v1/overview/find/symbol/{symbol}
           schema:
             type: string
+  /backend-marketstare-data-ingestion/actuator/health:
+    get:
+      summary: API health check
+      operationId: /backend-marketstare-data-ingestion/actuator/health
+      x-google-backend:
+        address: https://backend-marketstare-data-ingestion-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      responses:
+        '200':
+          description: A successful response for health check
+          schema:
+            type: string
   /api/v1/reddit/submissions/{query}:
     get:
       summary: Returns reddit submission w.r.t provided query e.g. aapl|apple
