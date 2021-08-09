@@ -145,18 +145,31 @@ paths:
           description: Successful response from /backend-news-api/actuator/health
           schema:
             type: string
-  /backend-news-api/api/v1/list/news:
-    post:
+  /backend-news-api/api/v1/list/news/countryCode/{countryCode}/ticker/{ticker}/totalItems/{totalItems}:
+    get:
       summary: API to fetch news w.r.t ticker and countryCode
-      operationId: /backend-news-api/api/v1/list/news
+      operationId: /backend-news-api/api/v1/list/news/countryCode/{countryCode}/ticker/{ticker}/totalItems/{totalItems}
       x-google-backend:
         address: https://backend-news-api-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
       security:
         - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      parameters:
+        - in: "path"
+          name: "countryCode"
+          required: true
+          type: "string"
+        - in: "path"
+          name: "ticker"
+          required: true
+          type: "string"
+        - in: "path"
+          name: "totalItems"
+          required: true
+          type: "integer"
       responses:
         '200':
-          description: Successful response from /backend-news-api/api/v1/list/news
+          description: Successful response from /backend-news-api/api/v1/list/news/countryCode/{countryCode}/ticker/{ticker}/totalItems/{totalItems}
           schema:
             type: string
   /backend-news-api/api/v1/news/details/{region}/{newsId}:
