@@ -12,7 +12,7 @@ paths:
   /backend-marketstare-search/actuator/health:
     get:
       summary: API health check
-      operationId: healthCheck
+      operationId: /backend-marketstare-search/actuator/health
       x-google-backend:
         address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
@@ -20,13 +20,13 @@ paths:
         - api_key: [AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM]
       responses:
         '200':
-          description: A successful response for health check
+          description: Successful response from /backend-marketstare-search/actuator/health
           schema:
             type: string
   /backend-marketstare-search/api/v1/all/tickers:
     get:
       summary: Returns all tickers
-      operationId: allTickers
+      operationId: /backend-marketstare-search/api/v1/all/tickers
       x-google-backend:
         address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
@@ -34,13 +34,13 @@ paths:
         - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM]
       responses:
         '200':
-          description: A successful response for /all/tickers
+          description: Successful response from /backend-marketstare-search/api/v1/all/tickers
           schema:
             type: string
   /backend-marketstare-search/api/v1/latestupdate/find/symbol/{symbol}:
     get:
       summary: Returns latest price of provided ticker
-      operationId: latestPrice
+      operationId: /backend-marketstare-search/api/v1/latestupdate/find/symbol/{symbol}
       x-google-backend:
         address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
@@ -53,13 +53,13 @@ paths:
           type: "string"
       responses:
         '200':
-          description: A successful response for /api/v1/latestupdate/find/symbol/{symbol}
+          description: Successful response from /backend-marketstare-search/api/v1/latestupdate/find/symbol/{symbol}
           schema:
             type: string
   /backend-marketstare-search/api/v1/overview/find/symbol/{symbol}:
     get:
       summary: Returns company's overview w.r.t provided ticker
-      operationId: overview
+      operationId: /backend-marketstare-search/api/v1/overview/find/symbol/{symbol}
       x-google-backend:
         address: https://backend-marketstare-search-co4tcjxfmq-uc.a.run.app
         path_translation: APPEND_PATH_TO_ADDRESS
@@ -72,7 +72,7 @@ paths:
           type: "string"
       responses:
         '200':
-          description: A successful response for /api/v1/overview/find/symbol/{symbol}
+          description: Successful response from /backend-marketstare-search/api/v1/overview/find/symbol/{symbol}
           schema:
             type: string
   /backend-marketstare-data-ingestion/actuator/health:
@@ -86,7 +86,49 @@ paths:
         - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
       responses:
         '200':
-          description: A successful response for health check
+          description: Successful response from /backend-marketstare-data-ingestion/actuator/health
+          schema:
+            type: string
+  /backend-marketstare-data-ingestion/api/v1/sentiment/analysis/blacklist/vocab/save:
+    post:
+      summary: API to store blacklist vocab for sentiment analysis
+      operationId: /backend-marketstare-data-ingestion/api/v1/sentiment/analysis/blacklist/vocab/save
+      x-google-backend:
+        address: https://backend-marketstare-data-ingestion-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      responses:
+        '200':
+          description: Successful response from /backend-marketstare-data-ingestion/api/v1/sentiment/analysis/blacklist/vocab/save
+          schema:
+            type: string
+  /backend-marketstare-data-ingestion/api/v1/sentiment/analysis/helper/vocab/save:
+    post:
+      summary: API to store blacklist vocab for sentiment analysis
+      operationId: /backend-marketstare-data-ingestion/api/v1/sentiment/analysis/helper/vocab/save
+      x-google-backend:
+        address: https://backend-marketstare-data-ingestion-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      responses:
+        '200':
+          description: Successful response from /backend-marketstare-data-ingestion/api/v1/sentiment/analysis/helper/vocab/save
+          schema:
+            type: string
+  /backend-marketstare-data-ingestion/api/v1/reddit/submission/save:
+    post:
+      summary: API to store blacklist vocab for sentiment analysis
+      operationId: /backend-marketstare-data-ingestion/api/v1/reddit/submission/save
+      x-google-backend:
+        address: https://backend-marketstare-data-ingestion-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      responses:
+        '200':
+          description: Successful response from /backend-marketstare-data-ingestion/api/v1/reddit/submission/save
           schema:
             type: string
   /api/v1/reddit/submissions/{query}:
@@ -105,7 +147,7 @@ paths:
           type: "string"
       responses:
         '200':
-          description: A successful response for /reddit/submissions/{query}
+          description: Successful response from /reddit/submissions/{query}
           schema:
             type: string
 securityDefinitions:
