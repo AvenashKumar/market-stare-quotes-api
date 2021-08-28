@@ -195,6 +195,29 @@ paths:
           description: Successful response from /backend-news-api/api/v1/news/details/{region}/{newsId}
           schema:
             type: string
+  /backend-news-api/api/v1/analysis/region/{region}/ticker/{ticker}:
+    get:
+      summary: Redirects to news page w.r.t region and newsId (received from /backend-news-api/api/v1/analysis)
+      operationId: /backend-news-api/api/v1/analysis/region/{region}/ticker/{ticker}
+      x-google-backend:
+        address: https://backend-news-api-co4tcjxfmq-uc.a.run.app
+        path_translation: APPEND_PATH_TO_ADDRESS
+      security:
+        - api_key: [ AIzaSyDqyDp6sFeU2PTN8RrT6ZTRUQB-s06tgmU, AIzaSyBESHznQRBHBjPmYs6-SYptov_vzmAMAUM ]
+      parameters:
+        - in: "path"
+          name: "region"
+          required: true
+          type: "string"
+        - in: "path"
+          name: "ticker"
+          required: true
+          type: "string"
+      responses:
+        '200':
+          description: Successful response from /backend-news-api/api/v1/analysis/region/{region}/ticker/{ticker}
+          schema:
+            type: string
   /api/v1/reddit/submissions/{query}:
     get:
       summary: Returns reddit submission w.r.t provided query e.g. aapl|apple
