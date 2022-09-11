@@ -29,7 +29,7 @@ market:
         lowlatency:
           options:
             host: yfapi.net
-            apikey: ${RAPID_API_YAHOO_LOW_LATENCY:L2Bo7U0NLJ5l0XDOSNpkm9E2yZvzk3YT8YKuyC1G}
+            apikey: ${RAPID_API_YAHOO_LOW_LATENCY:S0WwpZ5uZq7kjR4MkZrP02JRr6p296gx7sdCRIvt}
             endpoint: https://${market.data.rapidapi.yahoo.lowlatency.options.host}/v7/finance/options/{ticker}
     yahoo:
       api-endpoint: https://query1.finance.yahoo.com/v8/finance/chart
